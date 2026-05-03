@@ -50,16 +50,12 @@
         "catatan_program": ""
     },
     "2026-11-30": {
-        "nama_warden": "jihah",
-        "warden_oncall": "jihah",
-        "masa_rondaan": "8.15pm",
-        "bil_murid": 34,
-        "murid_tiada": "airis eryna - masalah pengangkutan",
-        "kes": [
-            "RAUDHAH - tidak mengisi buku log masuk/keluar ketika pulang ke asrama",
-            "",
-            ""
-        ],
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "kes": "",
         "catatan_program": ""
     },
     "2026-11-27": {
