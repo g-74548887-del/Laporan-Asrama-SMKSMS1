@@ -61,5 +61,14 @@
             ""
         ],
         "catatan_program": ""
+    },
+    "2026-11-27": {
+        "nama_warden": "test",
+        "oncall": "",
+        "kes": [
+            "",
+            "",
+            ""
+        ]
     }
 }
