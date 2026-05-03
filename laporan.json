@@ -35,5 +35,18 @@
             ""
         ],
         "catatan_program": ""
+    },
+    "30-11-2026": {
+        "nama_warden": "jihah",
+        "warden_oncall": "jihah",
+        "masa_rondaan": "8.15pm",
+        "bil_murid": 34,
+        "murid_tiada": "airis eryna - masalah pengangkutan",
+        "kes": [
+            "RAUDHAH - tidak mengisi buku log masuk/keluar",
+            "",
+            ""
+        ],
+        "catatan_program": ""
     }
 }
