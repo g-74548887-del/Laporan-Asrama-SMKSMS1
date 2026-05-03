@@ -79,5 +79,14 @@
         "masa_rondaan": "8.15pm",
         "kes": "RAUDHAH - tidak mengisi buku log masuk/keluar",
         "catatan_program": ""
+    },
+    "2026-04-01": {
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "kes": "",
+        "catatan_program": "test"
     }
 }
