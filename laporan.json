@@ -70,5 +70,14 @@
             "",
             ""
         ]
+    },
+    "2026-05-03": {
+        "nama_warden": "Jihah",
+        "oncall": "jihah",
+        "jumlah_murid": 34,
+        "murid_tiada": "Airis Eryna - Masalah Pengangkutan",
+        "masa_rondaan": "8.15pm",
+        "kes": "RAUDHAH - tidak mengisi buku log masuk/keluar",
+        "catatan_program": ""
     }
 }
