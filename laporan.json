@@ -24,13 +24,13 @@
         ]
     },
     "31.12.2026": {
-        "nama_warden": "",
-        "warden_oncall": "",
-        "masa_rondaan": "",
-        "bil_murid": 0,
-        "murid_tiada": "",
+        "nama_warden": "jihah",
+        "warden_oncall": "jihah",
+        "masa_rondaan": "8.15pm",
+        "bil_murid": 34,
+        "murid_tiada": "airis eryna - masalah pengangkutan",
         "kes": [
-            "",
+            "raudhah - tak isi buku masuk asrama setelah balik bermalam, menyebabkan pk tidak mengira kehadirannya.",
             "",
             ""
         ],
