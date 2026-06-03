@@ -1,25 +1,74 @@
+Berikut full coding lengkap yang terus boleh run dalam Streamlit 👍
+
+```python
 import streamlit as st
 import datetime
 import json
 from github import Github
 
-st.set_page_config(page_title="Laporan Warden", layout="wide")
+# ================== PAGE ==================
+st.set_page_config(
+    page_title="Laporan Warden",
+    layout="wide"
+)
+
 st.title("📋 Laporan Warden")
+
+# ================== SENARAI MURID ==================
+MURID = [
+    "AUNY HUMAIRAH",
+    "NURUL AIDA",
+    "DHIYA AMNI",
+    "NURIN NAJWA",
+    "DANIA",
+    "HAJAR BATRISYIA",
+    "DAMIA",
+    "QASEH ELLYSHA",
+    "AIRIS",
+    "AINNUR HUMAIRA",
+    "SHUHADA",
+    "QAISARA",
+    "ARISSA QAIREN",
+    "KHAIYISAH",
+    "NURIN AIREN",
+    "FATIHAH DAMIASARA",
+    "NURZAHIRAH",
+    "AMNI NADHIRAH",
+    "NURUL ASYIKIN",
+    "SYAHIDATUL",
+    "AMNI DAHLIA",
+    "RAUDHAH",
+    "ALYAA",
+    "NUR FATIHAH",
+    "NAJA SYIFA",
+    "SAFEERA",
+    "DAMIA DAYANA",
+    "SYUHADA ERINA",
+    "NURUL HUSNA",
+    "ZULAIFATUL",
+    "AINUL SAKINAH",
+    "FARZANA",
+    "UMMU BARIK",
+    "AMANDA",
+    "AMANI"
+]
 
 # ================== GITHUB ==================
 GITHUB_TOKEN = st.secrets["GITHUB_TOKEN"]
+
 REPO_NAME = "g-74548887-del/Laporan-Asrama-SMKSMS1"
 
 FILE_PATH = "laporan.json"
-HAID_FILE = "murid_haid.json"
 
 g = Github(GITHUB_TOKEN)
+
 repo = g.get_repo(REPO_NAME)
 
 # ================== LOAD ==================
 def load_json(path, default):
 
     try:
+
         file = repo.get_contents(path)
 
         return json.loads(
@@ -27,6 +76,7 @@ def load_json(path, default):
         )
 
     except:
+
         return default
 
 # ================== SAVE ==================
@@ -51,38 +101,23 @@ def save_json(path, data, msg):
             json.dumps(data, indent=4)
         )
 
-# ================== SYNC ==================
-def sync_from_github():
-
-    data = load_json(FILE_PATH, {})
-    haid = load_json(HAID_FILE, [])
-
-    if isinstance(data, dict):
-        st.session_state.data = data
-
-    if isinstance(haid, list):
-        st.session_state.haid = haid
-
 # ================== SESSION ==================
 if "data" not in st.session_state:
-    st.session_state.data = load_json(FILE_PATH, {})
 
-if "haid" not in st.session_state:
-    st.session_state.haid = load_json(HAID_FILE, [])
+    st.session_state.data = load_json(
+        FILE_PATH,
+        {}
+    )
 
 if "active_date" not in st.session_state:
+
     st.session_state.active_date = None
-
-if "synced" not in st.session_state:
-
-    sync_from_github()
-
-    st.session_state.synced = True
 
 # ================== DATE ==================
 def gen_dates():
 
     start = datetime.date(2026, 4, 1)
+
     end = datetime.date(2026, 11, 30)
 
     out = []
@@ -97,47 +132,18 @@ def gen_dates():
 
 all_dates = gen_dates()
 
-# ================== EXTRACT ==================
-def extract(text):
-
-    if not text:
-        return []
-
-    res = []
-
-    for line in text.split("\n"):
-
-        if "haid" in line.lower():
-
-            words = line.split()
-
-            nama = []
-
-            for w in words:
-
-                if w.isupper():
-                    nama.append(w)
-
-                else:
-                    break
-
-            if nama:
-                res.append(" ".join(nama))
-
-    return list(set(res))
-
-# ================== OPEN ==================
+# ================== OPEN DATE ==================
 def open_date(d):
 
     st.session_state.active_date = d
 
-# ================== UI ==================
+# ================== LAYOUT ==================
 col1, col2 = st.columns([2,1])
 
 # ================== TARIKH ==================
 with col1:
 
-    st.subheader("Senarai Tarikh")
+    st.subheader("📅 Senarai Tarikh")
 
     for d in all_dates:
 
@@ -145,13 +151,17 @@ with col1:
 
         color = "🟢" if key in st.session_state.data else "🔴"
 
-        if st.button(f"{color} {key}", key=key):
+        if st.button(
+            f"{color} {key}",
+            key=key,
+            use_container_width=True
+        ):
 
             open_date(key)
 
             st.rerun()
 
-# ================== POPUP ==================
+# ================== FORM ==================
 if st.session_state.active_date:
 
     date_key = st.session_state.active_date
@@ -159,132 +169,199 @@ if st.session_state.active_date:
     @st.dialog(f"Laporan {date_key}")
     def form():
 
-        existing = st.session_state.data.get(date_key, {})
+        existing = st.session_state.data.get(
+            date_key,
+            {}
+        )
 
         # ================== INPUT ==================
         nama = st.text_input(
             "Nama Warden",
-            value=existing.get("nama_warden", "")
+            value=existing.get(
+                "nama_warden",
+                ""
+            )
         )
 
         oncall = st.text_input(
             "Warden Oncall",
-            value=existing.get("oncall", "")
+            value=existing.get(
+                "oncall",
+                ""
+            )
         )
 
         jumlah = st.number_input(
             "Jumlah Murid",
             min_value=0,
-            value=existing.get("jumlah_murid", 0)
+            value=existing.get(
+                "jumlah_murid",
+                0
+            )
         )
 
-        # ================== MURID TIADA ==================
         tiada = st.text_area(
             "Murid Tiada / Sebab",
-            value=existing.get("murid_tiada", ""),
-            height=180,
-            placeholder="""1. AISY - masalah pengangkutan
-2. SUMAYYAH - balik rumah
-3. INTISAR - MC"""
+            value=existing.get(
+                "murid_tiada",
+                ""
+            ),
+            height=120
         )
 
-        # ================== MASA ==================
         masa = st.text_input(
             "Masa Rondaan",
-            value=existing.get("masa_rondaan", "")
+            value=existing.get(
+                "masa_rondaan",
+                ""
+            )
         )
 
-        # ================== INFO ==================
-        st.info(
-            """
-⚠️ Sila guna format SENARAI
+        st.markdown("---")
 
-1. NAMA - sebab
-2. NAMA - sebab
-3. NAMA - sebab
+        # ================== ADUAN ==================
+        st.subheader("📌 Aduan Murid")
 
-Contoh:
-1. AISY - masalah pengangkutan
-2. SUMAYYAH - demam
-
-Nama murid HAID pula MESTI HURUF BESAR.
-
-Contoh:
-SITI AISYAH haid
-NUR AMANI haid
-
-━━━━━━━━━━━━━━━━━━
-
-📌 Senarai Nama Murid
-Asrama Darul Aishah
-
-1. AUNY HUMAIRAH
-2. NURUL AIDA
-3. DHIYA AMNI
-4. NURIN NAJWA
-5. DANIA
-6. HAJAR BATRISYIA
-7. DAMIA
-8. QASEH ELLYSHA
-9. AIRIS
-10. AINNUR HUMAIRA
-11. SHUHADA
-12. QAISARA
-13. ARISSA QAIREN
-14. KHAIYISAH
-15. NURIN AIREN
-16. FATIHAH DAMIASARA
-17. NURZAHIRAH
-18. AMNI NADHIRAH
-19. NURUL ASYIKIN
-20. SYAHIDATUL
-21. AMNI DAHLIA
-22. RAUDHAH
-23. ALYAA
-24. NUR FATIHAH
-25. NAJA SYIFA
-26. SAFEERA
-27. DAMIA DAYANA
-28. SYUHADA ERINA
-29. NURUL HUSNA
-30. ZULAIFATUL
-31. AINUL SAKINAH
-32. FARZANA
-33. UMMU BARIK
-34. AMANDA
-35. AMANI DAMIA
-
-✅ Sila guna format nama di atas
-untuk sebarang laporan.
-            """
+        aduan_list = existing.get(
+            "aduan_list",
+            []
         )
 
-        # ================== LAPORAN ==================
-        kes = st.text_area(
-            "Laporan Rondaan",
-            value=existing.get("kes", ""),
-            height=180
+        selected_murid = st.selectbox(
+            "Pilih Nama Murid",
+            MURID
         )
+
+        aduan_text = st.text_area(
+            "Penjelasan Aduan"
+        )
+
+        if st.button("➕ Tambah Aduan"):
+
+            aduan_list.append({
+
+                "nama": selected_murid,
+
+                "aduan": aduan_text
+
+            })
+
+            existing["aduan_list"] = aduan_list
+
+            st.session_state.data[date_key] = existing
+
+            save_json(
+                FILE_PATH,
+                st.session_state.data,
+                "update aduan"
+            )
+
+            st.success("Aduan berjaya ditambah")
+
+            st.rerun()
+
+        # ================== PAPAR ADUAN ==================
+        st.markdown("### 📋 Senarai Aduan")
+
+        kiraan = {}
+
+        for item in aduan_list:
+
+            nama_murid = item["nama"]
+
+            if nama_murid not in kiraan:
+
+                kiraan[nama_murid] = 0
+
+            kiraan[nama_murid] += 1
+
+        if kiraan:
+
+            sorted_kiraan = sorted(
+                kiraan.items(),
+                key=lambda x: x[1],
+                reverse=True
+            )
+
+            for nama_murid, jumlah_aduan in sorted_kiraan:
+
+                with st.expander(
+                    f"{nama_murid} ({jumlah_aduan})"
+                ):
+
+                    for item in aduan_list:
+
+                        if item["nama"] == nama_murid:
+
+                            st.write(
+                                "•",
+                                item["aduan"]
+                            )
+
+        else:
+
+            st.info("Tiada aduan")
+
+        st.markdown("---")
+
+        # ================== HAID ==================
+        st.subheader("🩸 Murid Haid")
+
+        haid_data = existing.get(
+            "haid_data",
+            {}
+        )
+
+        for murid in MURID:
+
+            default_hari = haid_data.get(
+                murid,
+                0
+            )
+
+            hari = st.number_input(
+                f"{murid}",
+                min_value=0,
+                max_value=10,
+                value=default_hari,
+                step=1,
+                key=f"{date_key}_{murid}"
+            )
+
+            haid_data[murid] = hari
+
+        st.markdown("---")
 
         # ================== PROGRAM ==================
         program = st.text_area(
             "Nama Program",
-            value=existing.get("catatan_program", ""),
-            height=120
+            value=existing.get(
+                "catatan_program",
+                ""
+            ),
+            height=100
         )
 
         # ================== HANTAR ==================
-        if st.button("Hantar"):
+        if st.button("✅ Hantar"):
 
             st.session_state.data[date_key] = {
 
                 "nama_warden": nama,
+
                 "oncall": oncall,
+
                 "jumlah_murid": jumlah,
+
                 "murid_tiada": tiada,
+
                 "masa_rondaan": masa,
-                "kes": kes,
-                "catatan_program": program
+
+                "catatan_program": program,
+
+                "aduan_list": aduan_list,
+
+                "haid_data": haid_data
             }
 
             save_json(
@@ -293,20 +370,9 @@ untuk sebarang laporan.
                 "update laporan"
             )
 
-            # ================== AUTO HAID ==================
-            for n in extract(kes):
-
-                if n not in st.session_state.haid:
-
-                    st.session_state.haid.append(n)
-
-            save_json(
-                HAID_FILE,
-                st.session_state.haid,
-                "update haid"
+            st.success(
+                "Laporan berjaya dihantar"
             )
-
-            st.success("Laporan berjaya dihantar")
 
             st.session_state.active_date = None
 
@@ -319,7 +385,9 @@ untuk sebarang laporan.
 
             if date_key in st.session_state.data:
 
-                del st.session_state.data[date_key]
+                del st.session_state.data[
+                    date_key
+                ]
 
                 save_json(
                     FILE_PATH,
@@ -327,7 +395,9 @@ untuk sebarang laporan.
                     "delete tarikh"
                 )
 
-            st.success("Tarikh telah dikosongkan")
+            st.success(
+                "Tarikh telah dikosongkan"
+            )
 
             st.session_state.active_date = None
 
@@ -335,77 +405,81 @@ untuk sebarang laporan.
 
     form()
 
-# ================== MURID HAID ==================
+# ================== RUMUSAN ==================
 with col2:
 
-    st.subheader("Murid Haid")
+    st.subheader("📊 Rumusan Haid")
 
-    kiraan_haid = {}
+    total_haid = {}
+
+    for murid in MURID:
+
+        total_haid[murid] = 0
 
     for tarikh, info in st.session_state.data.items():
 
-        kes_text = info.get("kes", "")
-
-        for nama in extract(kes_text):
-
-            if nama not in kiraan_haid:
-
-                kiraan_haid[nama] = 0
-
-            kiraan_haid[nama] += 1
-
-    # ================== PAPAR ==================
-    if not kiraan_haid:
-
-        st.info("Tiada murid")
-
-    else:
-
-        sorted_list = sorted(
-            kiraan_haid.items(),
-            key=lambda x: x[1],
-            reverse=True
+        haid_data = info.get(
+            "haid_data",
+            {}
         )
 
-        for i, (nama, jumlah) in enumerate(sorted_list):
+        for murid, hari in haid_data.items():
 
-            c1, c2 = st.columns([3,1])
+            total_haid[murid] += hari
 
-            c1.write(f"{nama} ({jumlah})")
+    sorted_total = sorted(
+        total_haid.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
 
-            if c2.button("❌", key=f"del_{i}"):
+    for murid, jumlah in sorted_total:
 
-                for tarikh, info in st.session_state.data.items():
+        st.write(f"{murid} ({jumlah})")
 
-                    kes_text = info.get("kes", "")
+    st.markdown("---")
 
-                    lines = kes_text.split("\n")
+    st.subheader("📌 Rumusan Aduan")
 
-                    new_lines = []
+    kiraan_aduan = {}
 
-                    for line in lines:
+    for tarikh, info in st.session_state.data.items():
 
-                        if nama not in line:
+        aduan_list = info.get(
+            "aduan_list",
+            []
+        )
 
-                            new_lines.append(line)
+        for item in aduan_list:
 
-                    st.session_state.data[tarikh]["kes"] = "\n".join(new_lines)
+            nama = item["nama"]
 
-                save_json(
-                    FILE_PATH,
-                    st.session_state.data,
-                    "delete haid"
-                )
+            if nama not in kiraan_aduan:
 
-                st.rerun()
+                kiraan_aduan[nama] = 0
+
+            kiraan_aduan[nama] += 1
+
+    sorted_aduan = sorted(
+        kiraan_aduan.items(),
+        key=lambda x: x[1],
+        reverse=True
+    )
+
+    for nama, jumlah in sorted_aduan:
+
+        st.write(f"{nama} ({jumlah})")
 
 # ================== SIDEBAR ==================
-st.sidebar.header("Control Panel")
+st.sidebar.header("⚙️ Control Panel")
 
 # ================== SYNC ==================
 if st.sidebar.button("🔄 Sync Data"):
 
-    sync_from_github()
+    st.session_state.data = load_json(
+        FILE_PATH,
+        {}
+    )
 
     st.rerun()
 
@@ -414,12 +488,11 @@ if st.sidebar.button("🧨 Reset Semua Data"):
 
     st.session_state.data = {}
 
-    st.session_state.haid = []
-
-    st.session_state.active_date = None
-
-    save_json(FILE_PATH, {}, "RESET semua")
-
-    save_json(HAID_FILE, [], "RESET semua haid")
+    save_json(
+        FILE_PATH,
+        {},
+        "RESET semua"
+    )
 
     st.rerun()
+```
