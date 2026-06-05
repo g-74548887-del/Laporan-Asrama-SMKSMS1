@@ -6,7 +6,12 @@
         "murid_tiada": "Aisy-Masalah Pengangkutan",
         "masa_rondaan": "8.30pm",
         "catatan_program": "",
-        "aduan_list": [],
+        "aduan_list": [
+            {
+                "nama": "FARZANA",
+                "aduan": "tidak isi buku log masuk"
+            }
+        ],
         "haid_data": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
