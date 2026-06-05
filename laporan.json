@@ -6,12 +6,7 @@
         "murid_tiada": "Aisy-Masalah Pengangkutan",
         "masa_rondaan": "8.30pm",
         "catatan_program": "",
-        "aduan_list": [
-            {
-                "nama": "NURIN NAJWA",
-                "aduan": "test"
-            }
-        ],
+        "aduan_list": [],
         "haid_data": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
@@ -57,12 +52,7 @@
         "murid_tiada": "intisar sayyidah-Masalah Kesihatan",
         "masa_rondaan": "9.00pm",
         "catatan_program": "",
-        "aduan_list": [
-            {
-                "nama": "NURIN NAJWA",
-                "aduan": "tidak rekod nama dalam log masuk"
-            }
-        ],
+        "aduan_list": [],
         "haid_data": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
