@@ -184,6 +184,13 @@
         }
     },
     "2026-06-10": {
+        "nama_warden": "NORHANIM BINTI NORDIN",
+        "oncall": "NARJIHAH BINTI MOHD HASHIM",
+        "jumlah_murid": 34,
+        "murid_tiada": "TIADA",
+        "masa_rondaan": "3.00PM",
+        "catatan_program": "TIADA",
+        "aduan_list": [],
         "haid_data": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
