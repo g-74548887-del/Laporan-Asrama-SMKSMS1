@@ -98,7 +98,12 @@
         "murid_tiada": "",
         "masa_rondaan": "",
         "catatan_program": "",
-        "aduan_list": [],
+        "aduan_list": [
+            {
+                "nama": "FARZANA",
+                "aduan": "test"
+            }
+        ],
         "haid_data": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
