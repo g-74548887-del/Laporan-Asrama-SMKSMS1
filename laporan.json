@@ -276,11 +276,6 @@
         }
     },
     "2026-04-07": {
-        "aduan_list": [
-            {
-                "nama": "ZULAIFATUL",
-                "aduan": "test 2"
-            }
-        ]
+        "aduan_list": []
     }
 }
