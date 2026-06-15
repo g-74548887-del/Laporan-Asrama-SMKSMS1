@@ -266,8 +266,6 @@
         "murid_tiada": "",
         "masa_rondaan": "",
         "aduan_list": [],
-        "haid_hari_ini": {
-            "HAJAR BATRISYIA": 1
-        }
+        "haid_hari_ini": {}
     }
 }
