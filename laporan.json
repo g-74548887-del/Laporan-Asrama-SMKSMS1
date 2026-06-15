@@ -277,5 +277,15 @@
     },
     "2026-04-07": {
         "aduan_list": []
+    },
+    "2026-09-28": {
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "catatan_program": "",
+        "aduan_list": [],
+        "haid_data": {}
     }
 }
