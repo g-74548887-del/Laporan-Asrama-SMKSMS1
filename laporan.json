@@ -235,7 +235,12 @@
         "jumlah_murid": 32,
         "murid_tiada": "Nur Dania Aleesya  & Nur Arissa Qaireen - Kem Generasi Madani 14-16 Jun\nNur Ainul Sakinah- MC",
         "masa_rondaan": "8.00am",
-        "aduan_list": [],
+        "aduan_list": [
+            {
+                "nama": "AUNY HUMAIRAH",
+                "aduan": "test"
+            }
+        ],
         "haid_hari_ini": {
             "HAJAR BATRISYIA": 7,
             "DANIA": 4,
