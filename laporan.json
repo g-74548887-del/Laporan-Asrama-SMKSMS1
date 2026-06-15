@@ -260,9 +260,20 @@
     },
     "2026-11-18": {},
     "2026-11-30": {
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "aduan_list": [],
         "haid_hari_ini": {
             "HAJAR BATRISYIA": 2,
             "DANIA": 1
-        }
+        },
+        "nama_program": "",
+        "program_images": [
+            "",
+            ""
+        ]
     }
 }
