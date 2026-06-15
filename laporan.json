@@ -325,5 +325,13 @@
             "AMANDA": 0,
             "AMANI": 3
         }
+    },
+    "2026-04-07": {
+        "aduan_list": [
+            {
+                "nama": "ZULAIFATUL",
+                "aduan": "test 2"
+            }
+        ]
     }
 }
