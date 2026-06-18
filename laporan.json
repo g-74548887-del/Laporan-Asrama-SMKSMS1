@@ -298,6 +298,12 @@
         ]
     },
     "2026-06-18": {
+        "nama_warden": "Narjihah ",
+        "oncall": "Kamsiah",
+        "jumlah_murid": 36,
+        "murid_tiada": "",
+        "masa_rondaan": "8.33",
+        "aduan_list": [],
         "haid_hari_ini": {
             "DAMIA": 1,
             "AMNI DAHLIA": 1,
@@ -308,6 +314,11 @@
             "NURUL AIDA": 1,
             "NURUL HUSNA": 1,
             "AMANINA": 1
-        }
+        },
+        "nama_program": "",
+        "program_images": [
+            "",
+            ""
+        ]
     }
 }
