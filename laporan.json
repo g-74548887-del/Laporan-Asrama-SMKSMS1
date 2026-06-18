@@ -273,6 +273,9 @@
                 "nama": "NURUL AIDA",
                 "aduan": "Terdapat beberapa murid yang menyidai pakaian di katil. "
             }
-        ]
+        ],
+        "haid_hari_ini": {
+            "DHIYA AMNI": 1
+        }
     }
 }
