@@ -303,7 +303,12 @@
         "jumlah_murid": 36,
         "murid_tiada": "",
         "masa_rondaan": "8.33",
-        "aduan_list": [],
+        "aduan_list": [
+            {
+                "nama": "AMANINA",
+                "aduan": "tak solat maghrib..tidur"
+            }
+        ],
         "haid_hari_ini": {
             "DAMIA": 1,
             "AMNI DAHLIA": 1,
