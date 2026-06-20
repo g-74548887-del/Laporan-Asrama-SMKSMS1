@@ -7,7 +7,7 @@
         "masa_rondaan": "",
         "catatan_program": "",
         "aduan_list": [],
-        "haid_data": {
+        "haid_hari_ini": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
             "DHIYA AMNI": 8,
@@ -53,7 +53,7 @@
         "masa_rondaan": "9.00 pm",
         "catatan_program": "",
         "aduan_list": [],
-        "haid_data": {
+        "haid_hari_ini": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
             "DHIYA AMNI": 0,
@@ -99,7 +99,7 @@
         "masa_rondaan": "3.00PM",
         "catatan_program": "TIADA",
         "aduan_list": [],
-        "haid_data": {
+        "haid_hari_ini": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
             "DHIYA AMNI": 0,
@@ -145,7 +145,7 @@
         "masa_rondaan": "3.00PM",
         "catatan_program": "TIADA",
         "aduan_list": [],
-        "haid_data": {
+        "haid_hari_ini": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
             "DHIYA AMNI": 0,
@@ -191,7 +191,7 @@
         "masa_rondaan": "3.00PM",
         "catatan_program": "TIADA",
         "aduan_list": [],
-        "haid_data": {
+        "haid_hari_ini": {
             "AUNY HUMAIRAH": 0,
             "NURUL AIDA": 0,
             "DHIYA AMNI": 0,
@@ -260,7 +260,8 @@
         "haid_hari_ini": {
             "AINUL SAKINAH": 4,
             "AMANI": 2,
-            "DHIYA AMNI": 2
+            "DHIYA AMNI": 2,
+            "NURUL AIDA": 1
         }
     },
     "2026-06-17": {
