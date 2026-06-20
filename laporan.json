@@ -7,7 +7,9 @@
         "masa_rondaan": "",
         "catatan_program": "",
         "nama_program": "",
-        "haid_hari_ini": {},
+        "haid_hari_ini": {
+            "AUNY HUMAIRAH": 1
+        },
         "salah_laku_list": [],
         "images_base64": []
     }
