@@ -14,6 +14,11 @@
         ]
     },
     "2026-06-18": {
+        "nama_warden": "Narjihah",
+        "oncall": "Kamsiah",
+        "jumlah_murid": 36,
+        "murid_tiada": "",
+        "masa_rondaan": "8.33pm",
         "aduan_list": [
             {
                 "nama": "AMANINA",
@@ -27,6 +32,12 @@
                 "nama": "AUNY HUMAIRAH",
                 "aduan": "sterika baju waktu solat isyak"
             }
+        ],
+        "haid_hari_ini": {},
+        "nama_program": "",
+        "program_images": [
+            "",
+            ""
         ]
     }
 }
