@@ -257,11 +257,16 @@
         "aduan_list": []
     },
     "2026-06-01": {
-        "haid_hari_ini": {
-            "AINUL SAKINAH": 4,
-            "AMANI": 2,
-            "DHIYA AMNI": 2
-        }
+        "haid_hari_ini": {},
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "catatan_program": "",
+        "nama_program": "",
+        "salah_laku_list": [],
+        "images_base64": []
     },
     "2026-06-17": {
         "nama_warden": "NORHANIM BINTI NORDIN",
