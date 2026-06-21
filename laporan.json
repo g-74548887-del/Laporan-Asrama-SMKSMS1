@@ -393,5 +393,17 @@
         "haid_hari_ini": {},
         "salah_laku_list": [],
         "images_base64": []
+    },
+    "2026-06-06": {
+        "nama_warden": "CUTI PENGGAL",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "catatan_program": "",
+        "nama_program": "",
+        "haid_hari_ini": {},
+        "salah_laku_list": [],
+        "images_base64": []
     }
 }
