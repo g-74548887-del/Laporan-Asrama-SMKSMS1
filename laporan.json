@@ -417,5 +417,20 @@
         "haid_hari_ini": {},
         "salah_laku_list": [],
         "images_base64": []
+    },
+    "2026-06-22": {
+        "nama_warden": "NOR AQILAH BINTI ALIASAM",
+        "oncall": "",
+        "jumlah_murid": 2,
+        "murid_tiada": "-",
+        "masa_rondaan": "8.30 PM",
+        "catatan_program": "-",
+        "nama_program": "-",
+        "haid_hari_ini": {
+            "NURIN NAJWA": 1,
+            "QAISARA": 1
+        },
+        "salah_laku_list": [],
+        "images_base64": []
     }
 }
