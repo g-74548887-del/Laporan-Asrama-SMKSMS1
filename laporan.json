@@ -432,5 +432,22 @@
         },
         "salah_laku_list": [],
         "images_base64": []
+    },
+    "2026-06-29": {
+        "nama_warden": "FARRAH ADILLA BINTI MOHD AMIN",
+        "oncall": "",
+        "jumlah_murid": 37,
+        "murid_tiada": "1. Raudhah\n2. Ummu Barikh\n\n(Isnin pagi baru balik ke asrama)\n",
+        "masa_rondaan": "",
+        "catatan_program": "",
+        "nama_program": "",
+        "haid_hari_ini": {
+            "ARISSA QAIREN": 1,
+            "DHIYA AMNI": 1,
+            "DANIA": 1,
+            "SHUHADA": 1
+        },
+        "salah_laku_list": [],
+        "images_base64": []
     }
 }
