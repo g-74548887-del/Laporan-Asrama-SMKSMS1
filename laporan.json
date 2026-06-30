@@ -404,9 +404,7 @@
         "masa_rondaan": "",
         "catatan_program": "",
         "nama_program": "",
-        "haid_hari_ini": {
-            "NURUL ASYIKIN": 1
-        },
+        "haid_hari_ini": {},
         "salah_laku_list": [],
         "images_base64": []
     },
