@@ -469,5 +469,19 @@
         "salah_laku_list": [],
         "images_base64": [],
         "reset_haid": true
+    },
+    "2026-07-01": {
+        "nama_warden": "",
+        "oncall": "",
+        "jumlah_murid": 0,
+        "murid_tiada": "",
+        "masa_rondaan": "",
+        "catatan_program": "",
+        "nama_program": "",
+        "haid_hari_ini": {
+            "AUNY HUMAIRAH": 1
+        },
+        "salah_laku_list": [],
+        "images_base64": []
     }
 }
