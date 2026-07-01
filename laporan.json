@@ -471,14 +471,21 @@
         "reset_haid": true
     },
     "2026-07-01": {
-        "nama_warden": "",
-        "oncall": "",
-        "jumlah_murid": 0,
-        "murid_tiada": "",
-        "masa_rondaan": "",
+        "nama_warden": "WAN HAWA DAMIA BINTI WAN RASNI",
+        "oncall": "NARJIHAH ",
+        "jumlah_murid": 36,
+        "murid_tiada": "QASEH - DEMAM",
+        "masa_rondaan": "9.10pm",
         "catatan_program": "",
         "nama_program": "",
-        "haid_hari_ini": {},
+        "haid_hari_ini": {
+            "NURUL ASYIKIN": 1,
+            "DHIYA AMNI": 1,
+            "DANIA": 1,
+            "SHUHADA": 1,
+            "NUR FATIHAH": 1,
+            "ARISSA QAIREN": 1
+        },
         "salah_laku_list": [],
         "images_base64": []
     }
